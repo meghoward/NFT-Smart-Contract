@@ -1,0 +1,33 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "src/contracts/ERC20.sol",
+    "id": 26469,
+    "exportedSymbols": {},
+    "nodeType": "SourceUnit",
+    "src": "0:24:15",
+    "nodes": [
+      {
+        "id": 26468,
+        "nodeType": "PragmaDirective",
+        "src": "0:24:15",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".10"
+        ]
+      }
+    ]
+  },
+  "id": 15
+}

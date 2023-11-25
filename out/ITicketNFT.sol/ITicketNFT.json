@@ -1,0 +1,2061 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "holder",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "approved",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "holder",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "creator",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "eventName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "getApproved",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "holderNameOf",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "holderName",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "holderOf",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "holder",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "isExpiredOrUsed",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxNumberOfTickets",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "holder",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "holderName",
+          "type": "string"
+        }
+      ],
+      "name": "mint",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "setUsed",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "newName",
+          "type": "string"
+        }
+      ],
+      "name": "updateHolderName",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "approve(address,uint256)": "095ea7b3",
+    "balanceOf(address)": "70a08231",
+    "creator()": "02d05d3f",
+    "eventName()": "8043c9c0",
+    "getApproved(uint256)": "081812fc",
+    "holderNameOf(uint256)": "600580d5",
+    "holderOf(uint256)": "dbacc237",
+    "isExpiredOrUsed(uint256)": "1ac0d8ac",
+    "maxNumberOfTickets()": "fdf8a44e",
+    "mint(address,string)": "d0def521",
+    "setUsed(uint256)": "8543016c",
+    "transferFrom(address,address,uint256)": "23b872dd",
+    "updateHolderName(uint256,string)": "7b615c4b"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"holder\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"holder\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"creator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"eventName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"getApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"holderNameOf\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"holderName\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"holderOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"holder\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"isExpiredOrUsed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxNumberOfTickets\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"holder\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"holderName\",\"type\":\"string\"}],\"name\":\"mint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"setUsed\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"newName\",\"type\":\"string\"}],\"name\":\"updateHolderName\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Required interface for the TicketNFT contract. A ticket NFT is a non-fungible token that represents a single entry to an event.\",\"events\":{\"Approval(address,address,uint256)\":{\"details\":\"Emitted when `holder` enables `approved` to manage the `ticketID` ticket.\"},\"Transfer(address,address,uint256)\":{\"details\":\"Emitted when `ticketID` ticket is transferred from `from` to `to`.\"}},\"kind\":\"dev\",\"methods\":{\"approve(address,uint256)\":{\"details\":\"Gives permission to `to` to transfer `ticketID` ticket to another account. The approval is cleared when the ticket is transferred. Only a single account can be approved at a time, so approving the zero address clears previous approvals. Requirements: - The caller must own the ticket - `ticketID` must exist. Emits an `Approval` event.\"},\"balanceOf(address)\":{\"details\":\"Returns the number of tickets a `holder` has.\"},\"creator()\":{\"details\":\"Returns the address of the user who created the NFT collection This is the address of the user who called `createNewEvent` in the primary market\"},\"eventName()\":{\"details\":\"Returns the name of the event for this TicketNFT\"},\"getApproved(uint256)\":{\"details\":\"Returns the account approved for `ticketID` ticket. Requirements: - `ticketID` must exist.\"},\"holderNameOf(uint256)\":{\"details\":\"Returns the current `holderName` associated with a `ticketID`. Requirements: - `ticketID` must exist.\"},\"holderOf(uint256)\":{\"details\":\"Returns the address of the holder of the `ticketID` ticket. Requirements: - `ticketID` must exist.\"},\"isExpiredOrUsed(uint256)\":{\"details\":\"Returns `true` if the `used` flag associated with a `ticketID` if `true` or if the ticket has expired, i.e., the current time is greater than the ticket's `expiryDate`. Requirements: - `ticketID` must exist\"},\"maxNumberOfTickets()\":{\"details\":\"Returns the maximum number of tickets that can be minted for this event.\"},\"setUsed(uint256)\":{\"details\":\"Sets the `used` flag associated with a `ticketID` to `true` Requirements: - `ticketID` must exist - the ticket must not already be used - the ticket must not be expired - Only the creator of the collection can call this function\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Transfers `ticketID` ticket from `from` to `to`. This should also set the approved address for this ticket to the zero address Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - the caller must either:   - own `ticketID`   - be approved to move this ticket using `approve` Emits a `Transfer` and an `Approval` event.\"},\"updateHolderName(uint256,string)\":{\"details\":\"Updates the `holderName` associated with a `ticketID`. Note that this does not update the actual holder of the ticket. Requirements: - `ticketID` must exists - Only the current holder can call this function\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"mint(address,string)\":{\"notice\":\"Mints a new ticket for `holder` with `holderName`. The ticket must be assigned the following metadata: - A unique ticket ID. Once a ticket has been used or expired, its ID should not be reallocated - An expiry time of 10 days from the time of minting - A boolean `used` flag set to false On minting, a `Transfer` event should be emitted with `from` set to the zero address. Requirements: - The caller must be the primary market\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/ITicketNFT.sol\":\"ITicketNFT\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/interfaces/ITicketNFT.sol\":{\"keccak256\":\"0x83814dd46627051b584740da82443058332a999be0073bb6016a96a3488557a9\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://1ada7c2375fed88e51c9ba9e9c5ae0e121a5fea237ce4695c1ead97180defaa7\",\"dweb:/ipfs/QmTrEW3cvJJwz8eR7ZEBjB9DyNqSh9rBEGXL7r8MYXSDSV\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.10+commit.fc410830"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "holder",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "approved",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "Approval",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "Transfer",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "approve"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "holder",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "balanceOf",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "balance",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "creator",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "eventName",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getApproved",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "holderNameOf",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "holderName",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "holderOf",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "holder",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "isExpiredOrUsed",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "maxNumberOfTickets",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "holder",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "holderName",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "mint",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setUsed"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferFrom"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "newName",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateHolderName"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "approve(address,uint256)": {
+            "details": "Gives permission to `to` to transfer `ticketID` ticket to another account. The approval is cleared when the ticket is transferred. Only a single account can be approved at a time, so approving the zero address clears previous approvals. Requirements: - The caller must own the ticket - `ticketID` must exist. Emits an `Approval` event."
+          },
+          "balanceOf(address)": {
+            "details": "Returns the number of tickets a `holder` has."
+          },
+          "creator()": {
+            "details": "Returns the address of the user who created the NFT collection This is the address of the user who called `createNewEvent` in the primary market"
+          },
+          "eventName()": {
+            "details": "Returns the name of the event for this TicketNFT"
+          },
+          "getApproved(uint256)": {
+            "details": "Returns the account approved for `ticketID` ticket. Requirements: - `ticketID` must exist."
+          },
+          "holderNameOf(uint256)": {
+            "details": "Returns the current `holderName` associated with a `ticketID`. Requirements: - `ticketID` must exist."
+          },
+          "holderOf(uint256)": {
+            "details": "Returns the address of the holder of the `ticketID` ticket. Requirements: - `ticketID` must exist."
+          },
+          "isExpiredOrUsed(uint256)": {
+            "details": "Returns `true` if the `used` flag associated with a `ticketID` if `true` or if the ticket has expired, i.e., the current time is greater than the ticket's `expiryDate`. Requirements: - `ticketID` must exist"
+          },
+          "maxNumberOfTickets()": {
+            "details": "Returns the maximum number of tickets that can be minted for this event."
+          },
+          "setUsed(uint256)": {
+            "details": "Sets the `used` flag associated with a `ticketID` to `true` Requirements: - `ticketID` must exist - the ticket must not already be used - the ticket must not be expired - Only the creator of the collection can call this function"
+          },
+          "transferFrom(address,address,uint256)": {
+            "details": "Transfers `ticketID` ticket from `from` to `to`. This should also set the approved address for this ticket to the zero address Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - the caller must either:   - own `ticketID`   - be approved to move this ticket using `approve` Emits a `Transfer` and an `Approval` event."
+          },
+          "updateHolderName(uint256,string)": {
+            "details": "Updates the `holderName` associated with a `ticketID`. Note that this does not update the actual holder of the ticket. Requirements: - `ticketID` must exists - Only the current holder can call this function"
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "mint(address,string)": {
+            "notice": "Mints a new ticket for `holder` with `holderName`. The ticket must be assigned the following metadata: - A unique ticket ID. Once a ticket has been used or expired, its ID should not be reallocated - An expiry time of 10 days from the time of minting - A boolean `used` flag set to false On minting, a `Transfer` event should be emitted with `from` set to the zero address. Requirements: - The caller must be the primary market"
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/interfaces/ITicketNFT.sol": "ITicketNFT"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/interfaces/ITicketNFT.sol": {
+        "keccak256": "0x83814dd46627051b584740da82443058332a999be0073bb6016a96a3488557a9",
+        "urls": [
+          "bzz-raw://1ada7c2375fed88e51c9ba9e9c5ae0e121a5fea237ce4695c1ead97180defaa7",
+          "dweb:/ipfs/QmTrEW3cvJJwz8eR7ZEBjB9DyNqSh9rBEGXL7r8MYXSDSV"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/ITicketNFT.sol",
+    "id": 28816,
+    "exportedSymbols": {
+      "ITicketNFT": [
+        28815
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:4848:23",
+    "nodes": [
+      {
+        "id": 28695,
+        "nodeType": "PragmaDirective",
+        "src": "39:24:23",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".10"
+        ]
+      },
+      {
+        "id": 28815,
+        "nodeType": "ContractDefinition",
+        "src": "212:4674:23",
+        "nodes": [
+          {
+            "id": 28705,
+            "nodeType": "EventDefinition",
+            "src": "334:113:23",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 28697,
+              "nodeType": "StructuredDocumentation",
+              "src": "239:90:23",
+              "text": " @dev Emitted when `ticketID` ticket is transferred from `from` to `to`."
+            },
+            "name": "Transfer",
+            "nameLocation": "340:8:23",
+            "parameters": {
+              "id": 28704,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28699,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "from",
+                  "nameLocation": "374:4:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28705,
+                  "src": "358:20:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28698,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "358:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28701,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nameLocation": "404:2:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28705,
+                  "src": "388:18:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28700,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "388:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28703,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "432:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28705,
+                  "src": "416:24:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28702,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "416:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "348:98:23"
+            }
+          },
+          {
+            "id": 28714,
+            "nodeType": "EventDefinition",
+            "src": "555:121:23",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 28706,
+              "nodeType": "StructuredDocumentation",
+              "src": "453:97:23",
+              "text": " @dev Emitted when `holder` enables `approved` to manage the `ticketID` ticket."
+            },
+            "name": "Approval",
+            "nameLocation": "561:8:23",
+            "parameters": {
+              "id": 28713,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28708,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "holder",
+                  "nameLocation": "595:6:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28714,
+                  "src": "579:22:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28707,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "579:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28710,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "approved",
+                  "nameLocation": "627:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28714,
+                  "src": "611:24:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28709,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "611:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28712,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "661:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28714,
+                  "src": "645:24:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28711,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "645:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "569:106:23"
+            }
+          },
+          {
+            "id": 28720,
+            "nodeType": "FunctionDefinition",
+            "src": "862:51:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28715,
+              "nodeType": "StructuredDocumentation",
+              "src": "682:175:23",
+              "text": " @dev Returns the address of the user who created the NFT collection\n This is the address of the user who called `createNewEvent` in the primary market"
+            },
+            "functionSelector": "02d05d3f",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "creator",
+            "nameLocation": "871:7:23",
+            "parameters": {
+              "id": 28716,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "878:2:23"
+            },
+            "returnParameters": {
+              "id": 28719,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28718,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28720,
+                  "src": "904:7:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28717,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "904:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "903:9:23"
+            },
+            "scope": 28815,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28726,
+            "nodeType": "FunctionDefinition",
+            "src": "1020:62:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28721,
+              "nodeType": "StructuredDocumentation",
+              "src": "919:96:23",
+              "text": " @dev Returns the maximum number of tickets that can be minted for this event."
+            },
+            "functionSelector": "fdf8a44e",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "maxNumberOfTickets",
+            "nameLocation": "1029:18:23",
+            "parameters": {
+              "id": 28722,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1047:2:23"
+            },
+            "returnParameters": {
+              "id": 28725,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28724,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28726,
+                  "src": "1073:7:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28723,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1073:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1072:9:23"
+            },
+            "scope": 28815,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28732,
+            "nodeType": "FunctionDefinition",
+            "src": "1162:59:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28727,
+              "nodeType": "StructuredDocumentation",
+              "src": "1085:72:23",
+              "text": " @dev Returns the name of the event for this TicketNFT"
+            },
+            "functionSelector": "8043c9c0",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "eventName",
+            "nameLocation": "1171:9:23",
+            "parameters": {
+              "id": 28728,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1180:2:23"
+            },
+            "returnParameters": {
+              "id": 28731,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28730,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28732,
+                  "src": "1206:13:23",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 28729,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1206:6:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1205:15:23"
+            },
+            "scope": 28815,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28742,
+            "nodeType": "FunctionDefinition",
+            "src": "1741:86:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28733,
+              "nodeType": "StructuredDocumentation",
+              "src": "1227:509:23",
+              "text": " Mints a new ticket for `holder` with `holderName`.\n The ticket must be assigned the following metadata:\n - A unique ticket ID. Once a ticket has been used or expired, its ID should not be reallocated\n - An expiry time of 10 days from the time of minting\n - A boolean `used` flag set to false\n On minting, a `Transfer` event should be emitted with `from` set to the zero address.\n Requirements:\n - The caller must be the primary market"
+            },
+            "functionSelector": "d0def521",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nameLocation": "1750:4:23",
+            "parameters": {
+              "id": 28738,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28735,
+                  "mutability": "mutable",
+                  "name": "holder",
+                  "nameLocation": "1763:6:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28742,
+                  "src": "1755:14:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28734,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1755:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28737,
+                  "mutability": "mutable",
+                  "name": "holderName",
+                  "nameLocation": "1785:10:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28742,
+                  "src": "1771:24:23",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 28736,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1771:6:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1754:42:23"
+            },
+            "returnParameters": {
+              "id": 28741,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28740,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "1823:2:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28742,
+                  "src": "1815:10:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28739,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1815:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1814:12:23"
+            },
+            "scope": 28815,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28750,
+            "nodeType": "FunctionDefinition",
+            "src": "1907:75:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28743,
+              "nodeType": "StructuredDocumentation",
+              "src": "1833:69:23",
+              "text": " @dev Returns the number of tickets a `holder` has."
+            },
+            "functionSelector": "70a08231",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "balanceOf",
+            "nameLocation": "1916:9:23",
+            "parameters": {
+              "id": 28746,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28745,
+                  "mutability": "mutable",
+                  "name": "holder",
+                  "nameLocation": "1934:6:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28750,
+                  "src": "1926:14:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28744,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1926:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1925:16:23"
+            },
+            "returnParameters": {
+              "id": 28749,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28748,
+                  "mutability": "mutable",
+                  "name": "balance",
+                  "nameLocation": "1973:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28750,
+                  "src": "1965:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28747,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1965:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1964:17:23"
+            },
+            "scope": 28815,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28758,
+            "nodeType": "FunctionDefinition",
+            "src": "2143:75:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28751,
+              "nodeType": "StructuredDocumentation",
+              "src": "1988:150:23",
+              "text": " @dev Returns the address of the holder of the `ticketID` ticket.\n Requirements:\n - `ticketID` must exist."
+            },
+            "functionSelector": "dbacc237",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "holderOf",
+            "nameLocation": "2152:8:23",
+            "parameters": {
+              "id": 28754,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28753,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "2169:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28758,
+                  "src": "2161:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28752,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2161:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2160:18:23"
+            },
+            "returnParameters": {
+              "id": 28757,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28756,
+                  "mutability": "mutable",
+                  "name": "holder",
+                  "nameLocation": "2210:6:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28758,
+                  "src": "2202:14:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28755,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2202:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2201:16:23"
+            },
+            "scope": 28815,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28768,
+            "nodeType": "FunctionDefinition",
+            "src": "2683:105:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28759,
+              "nodeType": "StructuredDocumentation",
+              "src": "2224:454:23",
+              "text": " @dev Transfers `ticketID` ticket from `from` to `to`.\n This should also set the approved address for this ticket to the zero address\n Requirements:\n - `from` cannot be the zero address.\n - `to` cannot be the zero address.\n - the caller must either:\n   - own `ticketID`\n   - be approved to move this ticket using `approve`\n Emits a `Transfer` and an `Approval` event."
+            },
+            "functionSelector": "23b872dd",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferFrom",
+            "nameLocation": "2692:12:23",
+            "parameters": {
+              "id": 28766,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28761,
+                  "mutability": "mutable",
+                  "name": "from",
+                  "nameLocation": "2722:4:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28768,
+                  "src": "2714:12:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28760,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2714:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28763,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nameLocation": "2744:2:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28768,
+                  "src": "2736:10:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28762,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2736:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28765,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "2764:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28768,
+                  "src": "2756:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28764,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2756:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2704:74:23"
+            },
+            "returnParameters": {
+              "id": 28767,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2787:0:23"
+            },
+            "scope": 28815,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28776,
+            "nodeType": "FunctionDefinition",
+            "src": "3228:56:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28769,
+              "nodeType": "StructuredDocumentation",
+              "src": "2794:429:23",
+              "text": " @dev Gives permission to `to` to transfer `ticketID` ticket to another account.\n The approval is cleared when the ticket is transferred.\n Only a single account can be approved at a time, so approving the zero address clears previous approvals.\n Requirements:\n - The caller must own the ticket\n - `ticketID` must exist.\n Emits an `Approval` event."
+            },
+            "functionSelector": "095ea7b3",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "approve",
+            "nameLocation": "3237:7:23",
+            "parameters": {
+              "id": 28774,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28771,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nameLocation": "3253:2:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28776,
+                  "src": "3245:10:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28770,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3245:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28773,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "3265:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28776,
+                  "src": "3257:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28772,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3257:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3244:30:23"
+            },
+            "returnParameters": {
+              "id": 28775,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3283:0:23"
+            },
+            "scope": 28815,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28784,
+            "nodeType": "FunctionDefinition",
+            "src": "3437:104:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28777,
+              "nodeType": "StructuredDocumentation",
+              "src": "3290:142:23",
+              "text": " @dev Returns the account approved for `ticketID` ticket.\n Requirements:\n - `ticketID` must exist."
+            },
+            "functionSelector": "081812fc",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getApproved",
+            "nameLocation": "3446:11:23",
+            "parameters": {
+              "id": 28780,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28779,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "3466:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28784,
+                  "src": "3458:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28778,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3458:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3457:18:23"
+            },
+            "returnParameters": {
+              "id": 28783,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28782,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "3531:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28784,
+                  "src": "3523:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28781,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3523:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3522:18:23"
+            },
+            "scope": 28815,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28792,
+            "nodeType": "FunctionDefinition",
+            "src": "3698:113:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28785,
+              "nodeType": "StructuredDocumentation",
+              "src": "3547:146:23",
+              "text": " @dev Returns the current `holderName` associated with a `ticketID`.\n Requirements:\n - `ticketID` must exist."
+            },
+            "functionSelector": "600580d5",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "holderNameOf",
+            "nameLocation": "3707:12:23",
+            "parameters": {
+              "id": 28788,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28787,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "3728:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28792,
+                  "src": "3720:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28786,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3720:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3719:18:23"
+            },
+            "returnParameters": {
+              "id": 28791,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28790,
+                  "mutability": "mutable",
+                  "name": "holderName",
+                  "nameLocation": "3799:10:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28792,
+                  "src": "3785:24:23",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 28789,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3785:6:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3784:26:23"
+            },
+            "scope": 28815,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28800,
+            "nodeType": "FunctionDefinition",
+            "src": "4094:86:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28793,
+              "nodeType": "StructuredDocumentation",
+              "src": "3817:272:23",
+              "text": " @dev Updates the `holderName` associated with a `ticketID`.\n Note that this does not update the actual holder of the ticket.\n Requirements:\n - `ticketID` must exists\n - Only the current holder can call this function"
+            },
+            "functionSelector": "7b615c4b",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateHolderName",
+            "nameLocation": "4103:16:23",
+            "parameters": {
+              "id": 28798,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28795,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "4128:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28800,
+                  "src": "4120:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28794,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4120:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28797,
+                  "mutability": "mutable",
+                  "name": "newName",
+                  "nameLocation": "4154:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28800,
+                  "src": "4138:23:23",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 28796,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4138:6:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4119:43:23"
+            },
+            "returnParameters": {
+              "id": 28799,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4179:0:23"
+            },
+            "scope": 28815,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28806,
+            "nodeType": "FunctionDefinition",
+            "src": "4492:44:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28801,
+              "nodeType": "StructuredDocumentation",
+              "src": "4186:301:23",
+              "text": " @dev Sets the `used` flag associated with a `ticketID` to `true`\n Requirements:\n - `ticketID` must exist\n - the ticket must not already be used\n - the ticket must not be expired\n - Only the creator of the collection can call this function"
+            },
+            "functionSelector": "8543016c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setUsed",
+            "nameLocation": "4501:7:23",
+            "parameters": {
+              "id": 28804,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28803,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "4517:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28806,
+                  "src": "4509:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28802,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4509:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4508:18:23"
+            },
+            "returnParameters": {
+              "id": 28805,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4535:0:23"
+            },
+            "scope": 28815,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 28814,
+            "nodeType": "FunctionDefinition",
+            "src": "4812:72:23",
+            "nodes": [],
+            "documentation": {
+              "id": 28807,
+              "nodeType": "StructuredDocumentation",
+              "src": "4542:265:23",
+              "text": " @dev Returns `true` if the `used` flag associated with a `ticketID` if `true`\n or if the ticket has expired, i.e., the current time is greater than the ticket's\n `expiryDate`.\n Requirements:\n - `ticketID` must exist"
+            },
+            "functionSelector": "1ac0d8ac",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isExpiredOrUsed",
+            "nameLocation": "4821:15:23",
+            "parameters": {
+              "id": 28810,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28809,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "4845:8:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28814,
+                  "src": "4837:16:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28808,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4837:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4836:18:23"
+            },
+            "returnParameters": {
+              "id": 28813,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28812,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28814,
+                  "src": "4878:4:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 28811,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4878:4:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4877:6:23"
+            },
+            "scope": 28815,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ITicketNFT",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 28696,
+          "nodeType": "StructuredDocumentation",
+          "src": "65:146:23",
+          "text": " @dev Required interface for the TicketNFT contract.\n A ticket NFT is a non-fungible token that represents a single entry to an event."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          28815
+        ],
+        "name": "ITicketNFT",
+        "nameLocation": "222:10:23",
+        "scope": 28816,
+        "usedErrors": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 23
+}
